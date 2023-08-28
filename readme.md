@@ -1,6 +1,5 @@
 
-## [TAKE A LOOK AT STREAMLIT APP] (https://usasales2019.streamlit.app/
-)
+## [TAKE A LOOK AT STREAMLIT APP] (https://usasales2019.streamlit.app/)
 ###### Most Popular Products
 ![image](https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/9eaf8637-759a-4739-b956-945c473d4ecf)
 
