@@ -1,6 +1,8 @@
-<img width="1280" alt="Screen Shot 2023-08-28 at 10 14 00 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/bad83ee5-6995-4036-b320-e9db91c7fcff">##### Product Analysis:
 
+## TAKE A LOOK AT STREAMLIT APP 
+https://usasales2019.streamlit.app/
 ###### Most Popular Products
+![image](https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/9eaf8637-759a-4739-b956-945c473d4ecf)
 
 - Identify the most popular products based on the 'Quantity Ordered' column.
 - Determine the average price and total revenue generated for each product.
