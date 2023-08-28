@@ -1,4 +1,4 @@
-##### Product Analysis:
+<img width="1280" alt="Screen Shot 2023-08-28 at 10 14 00 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/bad83ee5-6995-4036-b320-e9db91c7fcff">##### Product Analysis:
 
 ###### Most Popular Products
 
@@ -80,3 +80,16 @@
 ###### Effective Data Representation
 
 - Explore how visualizations like line charts, bar graphs, scatter plots, and heatmaps can effectively represent the insights obtained.
+#### SNAPSHOT FOR STREAMLIT APP
+<img width="1280" alt="Screen Shot 2023-08-28 at 10 14 00 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/7f73be8c-1981-417b-80ea-de8face7c6de">
+<img width="279" alt="Screen Shot 2023-08-28 at 10 15 30 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/84e49b79-b311-473e-87ae-1e540201baee">
+<img width="247" alt="Screen Shot 2023-08-28 at 10 15 24 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/55c97516-9f6c-4750-a74a-d3ef3932e430">
+<img width="592" alt="Screen Shot 2023-08-28 at 10 14 34 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/92e47429-0f17-4750-bc79-b87b54c30085">
+<img width="586" alt="Screen Shot 2023-08-28 at 10 14 12 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/7f888c53-e2a9-43b0-be47-048f747ded11">
+<img width="264" alt="Screen Shot 2023-08-28 at 10 15 41 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/9774b7e6-c070-45c2-a965-5621a876c5c8">
+<img width="670" alt="Screen Shot 2023-08-28 at 10 15 08 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/0eb085a2-bee3-4062-9b6e-2c6ae6b7ccc7">
+<img width="587" alt="Screen Shot 2023-08-28 at 10 14 47 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/5d9e20ca-b798-4cf4-bf54-67a2d7a84799">
+<img width="599" alt="Screen Shot 2023-08-28 at 10 14 42 AM" src="https://github.com/mahmoudmosaad82/Sales_Analysis/assets/66203316/1c06b354-686b-44cd-a33f-4b639b4b4e5d">
+
+
+
