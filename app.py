@@ -55,7 +55,9 @@ if analysis_option != '---':
         checkboxes = {
             "Most Popular Products": "show_popular_products",
             "Average Price and Total Revenue": "show_average_revenue",
-            "City Counts": "show_city_counts"
+            "City Counts": "show_city_counts",
+            "Profit for each city": "show_profit_city",
+            "profit for each day of the week": "show_profit_day",
         }
         
         selected_checkboxes = {}
@@ -75,17 +77,30 @@ if analysis_option != '---':
             st.plotly_chart(fig_avg)
             total_revenue_by_product = df.groupby('Product')['TotalPrice'].sum().reset_index()
 
-            # Sort products by total revenue in descending order
-            top_products = total_revenue_by_product.sort_values(by='TotalPrice', ascending=False)
-
-            # Create a bar graph showing top products by total revenue
-            fig = px.bar(top_products, x='Product', y='TotalPrice',color="Product", title='Top Products by Total Revenue',
-                        labels={'x': 'Product', 'y': 'Total Revenue'})
+            total_revenue_by_product = df.groupby('Product')['profit'].sum().reset_index()
+            #sort products by total revenue in descending order
+            top_products = total_revenue_by_product.sort_values(by='profit', ascending=False)
+            #visualize top products by total revenue
+            fig=px.bar(top_products, x='Product', y='profit',color="Product", title='Top Products by Total Revenue')
             st.plotly_chart(fig)
         
         if selected_checkboxes["show_city_counts"]:
             st.subheader('City Counts')
             fig = px.bar(x=df['City'].value_counts().index, y=df['City'].value_counts().values, color=df['City'].value_counts().index ,title='City Counts', labels={'x': 'City', 'y': 'Count'})
+            st.plotly_chart(fig)
+        if selected_checkboxes['show_profit_city']:
+            st.subheader('profit for each city')
+            # calculate the profit for each city    
+            total_revenue_by_city = df.groupby('City')['profit'].sum().reset_index()
+            fig=px.bar(total_revenue_by_city, x='City', y='profit', color='City', title='Total Revenue by City')
+            st.plotly_chart(fig)
+        if selected_checkboxes['show_profit_day']:
+            st.subheader('profit for each day of the week')
+            # calculate the profit for each day of the week
+            profit_by_day = df.groupby('Day')['profit'].sum().reset_index()
+            #sorting 
+            profit_by_day = profit_by_day.sort_values(by='profit', ascending=False)
+            fig=px.bar(profit_by_day, x='Day', y='profit', color='Day', title='Total Revenue by Day')
             st.plotly_chart(fig)
 
 
@@ -170,6 +185,43 @@ if analysis_option != '---':
         sns.heatmap(pivot_table, cmap='YlGnBu', annot=True, fmt='g')
         plt.title('Product Popularity by City')
         st.pyplot()
+        st.subheader('Total Revenue by Product for Each City')
+        # Calculate total revenue by product for each city
+        total_revenue_by_product_city = df.groupby(['Product', 'City'])['profit'].sum().reset_index()
+        top_revenue_city=total_revenue_by_product_city.sort_values(by='profit', ascending=False)
+        # visualise the total revenue by product for each city
+        px.bar(top_revenue_city, x='Product', y='profit', color='City', title='Total Revenue by Product for Each City')
+        # make a heat map to display the total revenue by product for each city
+        pivot_table = total_revenue_by_product_city.pivot(index='Product', columns='City', values='profit')
+        pivot_table.head()
+        # Create a heatmap using Seaborn
+        plt.figure(figsize=(10, 6))
+        plt.title('Total Revenue by Product for Each City')
+        sns.heatmap(pivot_table, annot=True, fmt=".1f", cmap="coolwarm", cbar=True)
+        plt.xlabel('City')
+        plt.ylabel('Product')
+        st.pyplot()
+        st.subheader('Total Revenue by Product for Each Week Day')
+        # Calculate total revenue by product for each day of the week
+        total_revenue_by_product_day = df.groupby(['Product', 'Day'])['profit'].sum().reset_index()
+
+        # # Visualize the total revenue by product for each week day using a bar chart
+        # fig = px.bar(total_revenue_by_product_day, x='Product', y='profit', color='Day',
+        #              title='Total Revenue by Product for Each Week Day',
+        #              labels={'x': 'Product', 'y': 'Total Revenue'})
+        # fig.show()
+
+        # Create a pivot table for the heatmap
+        pivot_table = total_revenue_by_product_day.pivot(index='Product', columns='Day', values='profit')
+
+        # Create a heatmap using Seaborn
+        plt.figure(figsize=(10, 6))
+        plt.title('Total Revenue by Product for Each Week Day')
+        sns.heatmap(pivot_table, annot=True, fmt=".1f", cmap="coolwarm", cbar=True)
+        plt.xlabel('Day')
+        plt.ylabel('Product')
+        st.pyplot()
+
 
 
 
